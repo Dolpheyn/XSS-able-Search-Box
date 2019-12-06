@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>XSS-able Search Box</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+	var languages = [
+	{
+		name: "Java",
+		designer: "James Gosling"
+	},
+	{
+		name: "C++",
+		designer: "Bjarne Stroustrup"
+	},
+	{
+		name: "C#",
+		designer: "Microsoft"
+	},
+	{
+		name: "PHP",
+		designer: "Rasmus Lerdorf"
+	},
+	{
+		name: "Javascript",
+		designer: "Brendan Eich"
+	},
+	];
+
+	function search(){
+		var s = document.getElementById("search").value;
+		var o = document.getElementById("output");
+		var msg = s + " not found.";
+		
+		languages.forEach(lang => {
+			if(s.toUpperCase() == lang.name.toUpperCase()){
+				msg = s + " is designed by " + lang.designer;
+			}
+		});
+		
+		//o.innerHTML = "<p>"+msg+"</p>";
+		o.innerHTML = msg;
+	}
+	</script>
+</head>
+<body>
+<div class="topnav">
+  <a>Home</a>
+  <a>About</a>
+  <a>Contact</a>
+  <div class="login-container">
+    <form action="#">
+      <input type="text" placeholder="Username" name="username" id="username">
+      <input type="text" placeholder="Password" name="psw" id="password">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<div class="wrap">
+   <div class="search">
+		<input type="text" id="search" class="searchTerm" placeholder="Find a programming language">
+		<button type="submit" class="searchButton" onclick="search()">Search</button>
+   </div>
+   </br> </br>
+   <div id="output"></div>
+</div>
+</body>
+</html>
