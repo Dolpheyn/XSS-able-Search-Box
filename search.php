@@ -6,7 +6,7 @@ $languages = array(
 	"php" => "Rasmus Lerdorf",
 	"javascript" => "Brendan Eich");
 
-$query = $_POST['search'];
+$query = $_GET['search'];
 
 if(array_key_exists(strtolower($query), $languages)){
 	echo $query . " is designed by " . $languages[$query];
