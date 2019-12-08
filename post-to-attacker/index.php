@@ -1,3 +1,19 @@
+<?php
+$languages = array(
+	"java"=>"James Gosling",
+	"c++"=>"Bjarne Stroustrup",
+	"c#"=>"Microsoft",
+	"php" => "Rasmus Lerdorf",
+	"javascript" => "Brendan Eich");
+
+$query = $_GET['search'];
+
+if(array_key_exists(strtolower($query), $languages)){
+	$o = $query . " is designed by " . $languages[$query];
+}
+else{
+	$o = $query . " not found.";
+}?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,19 +45,23 @@
   <div class="login-container">
     <form action="#">
       <input type="text" placeholder="Username" name="username" id="username">
-      <input type="text" placeholder="Password" name="psw" id="password">
+      <input type="password" placeholder="Password" name="psw" id="password">
       <button type="submit">Login</button>
     </form>
   </div>
 </div>
 
 <div class="wrap">
-   <div class="search">
+	<form action="http://localhost:8080" method="GET">
+	   <div class="search">
+
 		<input name = "search" type="text" id="search" class="searchTerm" placeholder="Find a programming language">
-		<button type="submit" class="searchButton" onclick="search()">Search</button>
-   </div>
+		<button type="submit" class="searchButton">Search</button>
+
+	   </div>
+	</form>
    </br> </br>
-   <div id="output"></div>
+   <div id="output"><?if(isset($_GET['search']))echo $o;?></div>
 </div>
 </body>
 </html>
