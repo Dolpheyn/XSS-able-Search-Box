@@ -5,42 +5,19 @@
 	<title>XSS-able Search Box</title>
 	<link rel="stylesheet" href="styles.css">
 	<script>
-	var languages = [
-	{
-		name: "Java",
-		designer: "James Gosling"
-	},
-	{
-		name: "C++",
-		designer: "Bjarne Stroustrup"
-	},
-	{
-		name: "C#",
-		designer: "Microsoft"
-	},
-	{
-		name: "PHP",
-		designer: "Rasmus Lerdorf"
-	},
-	{
-		name: "Javascript",
-		designer: "Brendan Eich"
-	},
-	];
-
 	function search(){
-		var s = document.getElementById("search").value;
-		var o = document.getElementById("output");
-		var msg = s + " not found.";
-		
-		languages.forEach(lang => {
-			if(s.toUpperCase() == lang.name.toUpperCase()){
-				msg = s + " is designed by " + lang.designer;
-			}
-		});
-		
-		//o.innerHTML = "<p>"+msg+"</p>";
-		o.innerHTML = msg;
+		var query = document.getElementById('search').value;
+		var url = "http://localhost:8080/search.php?search=";
+		//console.log(url + query);
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+           		 if (this.readyState == 4 && this.status == 200) {
+                		document.getElementById('output').innerHTML = this.responseText;
+			 	console.log(this.responseText);   
+			 }
+		};
+		xhr.open("GET", url+query, true);
+		xhr.send();
 	}
 	</script>
 </head>
