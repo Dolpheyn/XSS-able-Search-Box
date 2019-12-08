@@ -7,6 +7,8 @@ $languages = array(
 	"javascript" => "Brendan Eich");
 
 $query = $_GET['search'];
+$query = htmlspecialchars($query);
+
 
 if(array_key_exists(strtolower($query), $languages)){
 	$o = $query . " is designed by " . $languages[$query];
