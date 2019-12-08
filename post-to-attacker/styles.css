@@ -42,7 +42,8 @@ body{
 }
 
 /* Style the input field inside the navbar */
-.topnav input[type=text] {
+.topnav input[type=text],
+.topnav input[type=password] {
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
@@ -79,7 +80,8 @@ body{
     margin: 0;
     padding: 14px;
   }
-  .topnav input[type=text] {
+  .topnav input[type=text],
+  .topnav input[type=password]{
     border: 1px solid #ccc;
   }
 }
