@@ -9,8 +9,8 @@ $languages = array(
 $query = $_GET['search'];
 
 if(array_key_exists(strtolower($query), $languages)){
-	//found
+	echo $query . " is designed by " . $languages[$query];
 }
 else{
-	//not found
+	echo $query . " not found.";
 }
