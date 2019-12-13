@@ -7,15 +7,15 @@
 
  - Report
     - Cerita how boleh jumpa xss & bagitahu type (reflected)
-        - Masukkan any value in search box, akan keluar balik apa kita masukkan..
-        - Screenshot the page yang ada response selepas search & the page punya source code.
+        - [x] Masukkan any value in search box, akan keluar balik apa kita masukkan..
+        - [x] Screenshot the page yang ada response selepas search & the page punya source code.
 
-        -  Try letak script alert, screenshot type apa in search box & lepas keluar alert.
-        -  Explain script payload.
+        -  [x] Try letak script alert, screenshot type apa in search box & lepas keluar alert.
+        -  [x] Explain script payload.
 
-        - Screenshot apa user type in the page & tunjuk server request @localhost:8081
+        - [x] Screenshot apa user type in the page & tunjuk server request @localhost:8081
 
     - Cerita how to defend
-        - What are the ways to defend from xss (escape special characters).
-        - What is htmlspecialchars()
-        - whats the output kalau guna htmlspecialchars() on user's input.
+        - [x] What are the ways to defend from xss (escape special characters).
+        - [x] What is htmlspecialchars()
+        - [x] whats the output kalau guna htmlspecialchars() on user's input.
